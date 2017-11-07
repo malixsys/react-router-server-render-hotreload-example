@@ -5,13 +5,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
+
 module.exports = [
   {
     name: 'client',
     target: 'web',
-    entry: './src/client.jsx',
+    entry: resolve('src/client.jsx'),
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: resolve('dist'),
       filename: 'client.js',
       publicPath: '/dist/'
     },
@@ -72,9 +76,9 @@ module.exports = [
   {
     name: 'server',
     target: 'node',
-    entry: './server/render.jsx',
+    entry: resolve('server/render.jsx'),
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: resolve('dist'),
       filename: 'server.js',
       libraryTarget: 'commonjs2',
       publicPath: '/dist/'

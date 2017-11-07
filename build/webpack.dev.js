@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
+
 module.exports = [
   {
     name: 'client',
@@ -8,10 +13,10 @@ module.exports = [
     entry: [
       'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=false&quiet=false&noInfo=false',
       'react-hot-loader/patch',
-      path.resolve(__dirname, './src/client.jsx')
+      resolve('src/client.jsx')
     ],
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: resolve('dist'),
       filename: 'client.js',
       publicPath: '/dist/'
     },
@@ -67,7 +72,7 @@ module.exports = [
     target: 'node',
     entry: './server/render.jsx',
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: resolve('dist'),
       filename: 'server.js',
       libraryTarget: 'commonjs2',
       publicPath: '/dist/'
