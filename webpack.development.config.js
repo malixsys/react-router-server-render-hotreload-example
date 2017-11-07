@@ -11,9 +11,9 @@ module.exports = [
       path.resolve(__dirname, './src/client.jsx')
     ],
     output: {
-      path: path.join(__dirname, 'static'),
+      path: path.join(__dirname, 'dist'),
       filename: 'client.js',
-      publicPath: '/static/'
+      publicPath: '/dist/'
     },
     resolve: {
       extensions: ['.js', '.jsx']
@@ -67,10 +67,10 @@ module.exports = [
     target: 'node',
     entry: './server/render.jsx',
     output: {
-      path: path.join(__dirname, 'static'),
+      path: path.join(__dirname, 'dist'),
       filename: 'server.js',
       libraryTarget: 'commonjs2',
-      publicPath: '/static/'
+      publicPath: '/dist/'
     },
     devtool: 'source-map',
     resolve: {

@@ -17,7 +17,7 @@ module.exports = (app) => {
       chunks: false,
       'errors-only': true
     },
-    publicPath: '/static/'
+    publicPath: '/dist/'
   }));
   app.use(webpackHotMiddleware(compiler.compilers.find(comp => comp.name === 'client')));
   app.use(webpackHotServerMiddleware(compiler));

@@ -8,6 +8,6 @@ export default ({ markup, helmet }) => `<!doctype html>
 </head>
 <body ${helmet.bodyAttributes.toString()}>
   <div id="root" style="height: 100%">${markup}</div>
-  <script src="/static/client.js" async></script>
+  <script src="/dist/client.js" async></script>
 </body>
 </html>`;

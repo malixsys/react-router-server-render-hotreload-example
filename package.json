@@ -62,6 +62,6 @@
     "start": "NODE_ENV=production node server/index.js",
     "build": "npm run clean && npm run build-server",
     "build-server": "NODE_ENV=production webpack --config webpack.production.config.js --progress --profile --colors",
-    "clean": "rimraf static"
+    "clean": "rimraf dist"
   }
 }
